@@ -1,3 +1,74 @@
+.navbar {
+  position: absolute;
+  left: 0rem;
+  width: 18rem;
+  height: 100%;
+  background-color: #444;
+  text-align: center;
+}
+
+.navbar .side-nav {
+  list-style-type: none;
+  padding: 0;
+  padding-top: 5rem;
+}
+
+.navbar .side-nav .nav-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.navbar .side-nav .nav-item .nav-link {
+  padding: 0.8rem;
+  font-size: 1.5rem;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.navbar .side-nav .nav-item .nav-link.active {
+  color: #00e6ac;
+}
+
+.navbar .side-nav .nav-item .nav-link:hover {
+  color: #00e6ac;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.navbar .side-nav .nav-item .nav-icons {
+  padding: 1rem;
+  font-size: 1.3em;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.navbar .side-nav .nav-item .nav-icons .nav-i {
+  padding: 0.2rem;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.navbar .side-nav .nav-item .nav-icons .nav-i:hover {
+  color: #00e6ac;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.navbar .toggle-collapse {
+  visibility: hidden;
+}
+
+.navbar .nav-img {
+  text-align: center;
+  padding: 0;
+  padding-top: 4rem;
+  width: 10rem;
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
