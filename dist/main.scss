@@ -1,9 +1,72 @@
+@import "config";
+
 * {
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  color: blue;
+  @include background();
+  background: $primary-color;
+  color: $third-color;
+  height: 100%;
+  margin: 0;
+  font-family: "Segoe UI", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+  padding: 0;
+
+  &#bg-img {
+    overflow: hidden;
+  }
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 400;
+
+  &.lg-heading {
+    font-size: 6rem;
+  }
+
+  &.sm-heading {
+    margin-bottom: 2rem;
+    padding: 0.2rem 1rem;
+    background: rgba(lighten($primary-color, 2), 0.5);
+  }
+}
+
+a {
+  color: $third-color;
+  text-decoration: none;
+}
+
+header {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+}
+
+.text-sec {
+  color: $secondary-color;
+}
+
+main {
+  padding: 4rem;
+  padding-left: 25rem;
+  height: 100%;
+  min-height: calc(100vh - 60px); //footer stays in bottom
+
+  .icons {
+    margin-top: 1rem;
+
+    a {
+      padding: 0.4rem;
+
+      &:hover {
+        color: $secondary-color;
+        @include easeOut();
+      }
+    }
+  }
 }
