@@ -1,0 +1,14 @@
+@include mediaMd {
+  main {
+    transform: translateX(-20rem);
+    @include easeOut();
+  }
+  .toggle-collapse {
+    display: block;
+  }
+
+  .navbar {
+    transform: translateX(-18rem);
+    @include easeOut();
+  }
+}

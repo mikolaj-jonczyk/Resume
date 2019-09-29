@@ -24,10 +24,10 @@
   </head>
   <body id="bg-img">
     <div class="container">
+      <div class="toggle-collapse">
+        <i class="fas fa-bars fa-2x"></i>
+      </div>
       <nav class="navbar">
-        <button class="toggle-collapse">
-          <span class="toggle-icon"> </span>
-        </button>
         <img src="dist/img/boy.png" class="nav-img" />
         <ul class="side-nav">
           <li class="nav-item">
@@ -66,5 +66,10 @@
         <a href="#I"> <i class="fab fa-instagram fa-2x"></i> </a>
       </div>
     </main>
+    <script>
+      var btn = document.querySelector(".toggle-collapse");
+      var menu = document.querySelector(".navbar");
+      btn.addEventListener("click", fun => (menu.className += "-open"));
+    </script>
   </body>
 </html>
