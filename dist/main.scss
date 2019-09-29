@@ -71,3 +71,16 @@ main {
     }
   }
 }
+
+.toggle-collapse {
+  width: 100%;
+  padding: 0.5rem 0.8rem;
+  background: $secondary-color;
+  text-align: right;
+  box-sizing: border-box;
+  font-size: 1.2rem;
+  display: none;
+  z-index: 1;
+}
+
+@import "mobile";

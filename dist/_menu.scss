@@ -5,6 +5,12 @@
   height: 100%;
   background-color: $primary-color;
   text-align: center;
+
+  &-open {
+    @extend .navbar;
+    transform: translateX(18rem);
+    @include easeOut();
+  }
   .side-nav {
     list-style-type: none;
     padding: 0;
@@ -44,9 +50,7 @@
       }
     }
   }
-  .toggle-collapse {
-    visibility: hidden;
-  }
+
   .nav-img {
     text-align: center;
     padding: 0;
