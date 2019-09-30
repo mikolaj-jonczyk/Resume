@@ -25,8 +25,9 @@
   <body id="bg-img">
     <div class="container">
       <div class="toggle-collapse">
-        <i class="fas fa-bars fa-2x"></i>
+        ☰
       </div>
+      <div class="overlay"></div>
       <nav class="navbar">
         <img src="dist/img/boy.png" class="nav-img" />
         <ul class="side-nav">
@@ -67,9 +68,25 @@
       </div>
     </main>
     <script>
-      var btn = document.querySelector(".toggle-collapse");
-      var menu = document.querySelector(".navbar");
-      btn.addEventListener("click", fun => (menu.className += "-open"));
+      (function() {
+        var hamburger = {
+          navToggle: document.querySelector(".toggle-collapse"),
+          nav: document.querySelector(".navbar"),
+
+          doToggle: function(e) {
+            e.preventDefault();
+            this.navToggle.classList.toggle("open");
+            this.nav.classList.toggle("open");
+          }
+        };
+
+        hamburger.navToggle.addEventListener("click", function(e) {
+          hamburger.doToggle(e);
+        });
+        hamburger.nav.addEventListener("click", function(e) {
+          hamburger.doToggle(e);
+        });
+      })();
     </script>
   </body>
 </html>
