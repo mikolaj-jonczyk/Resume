@@ -5,12 +5,8 @@
   height: 100%;
   background-color: $primary-color;
   text-align: center;
+  z-index: 3;
 
-  &-open {
-    @extend .navbar;
-    transform: translateX(18rem);
-    @include easeOut();
-  }
   .side-nav {
     list-style-type: none;
     padding: 0;

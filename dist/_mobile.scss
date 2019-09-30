@@ -2,13 +2,77 @@
   main {
     transform: translateX(-20rem);
     @include easeOut();
+    padding: 0;
+    padding-left: 22rem;
+    white-space: nowrap;
+
+    .icons {
+      white-space: nowrap;
+      display: inline;
+      a {
+        padding: 0.1rem;
+        display: float;
+      }
+    }
+  }
+
+  h1,
+  h2,
+  h3 {
+    &.lg-heading {
+      font-size: 4rem;
+    }
+    &.sm-heading {
+      background: rgba(lighten($primary-color, 2), 0);
+      font-size: 1.5rem;
+    }
   }
   .toggle-collapse {
     display: block;
+    font-size: 2rem;
+    &:hover {
+      cursor: pointer;
+    }
+
+    &.open {
+      content: "X";
+    }
   }
 
   .navbar {
     transform: translateX(-18rem);
+    @include easeOut();
+    &.open {
+      transform: translateX(0);
+    }
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 100ms linear;
+  }
+
+  .overlay.open {
+    z-index: 1;
+    opacity: 1;
+  }
+}
+
+@include mediaLg {
+  main {
+    transform: translateX(0);
+    @include easeOut();
+  }
+
+  .navbar {
+    transform: translateX(0);
     @include easeOut();
   }
 }
