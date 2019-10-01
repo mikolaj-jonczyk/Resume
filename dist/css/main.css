@@ -179,7 +179,6 @@ main .icons a:hover {
     transition: all 0.5s ease-out;
     padding: 0;
     padding-left: 22rem;
-    white-space: nowrap;
   }
   main .icons {
     white-space: nowrap;
@@ -204,11 +203,8 @@ main .icons a:hover {
     display: block;
     font-size: 2rem;
   }
-  .toggle-collapse:hover {
+  .toggle-collapse .toggle-click:hover {
     cursor: pointer;
-  }
-  .toggle-collapse.open {
-    content: "X";
   }
   .navbar {
     -webkit-transform: translateX(-18rem);
@@ -219,6 +215,13 @@ main .icons a:hover {
   .navbar.open {
     -webkit-transform: translateX(0);
             transform: translateX(0);
+  }
+  .navbar .side-nav {
+    padding-top: 1rem;
+  }
+  .navbar .nav-img {
+    padding-top: 2rem;
+    width: 8rem;
   }
   .overlay {
     position: fixed;

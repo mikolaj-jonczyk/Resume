@@ -4,7 +4,6 @@
     @include easeOut();
     padding: 0;
     padding-left: 22rem;
-    white-space: nowrap;
 
     .icons {
       white-space: nowrap;
@@ -27,15 +26,14 @@
       font-size: 1.5rem;
     }
   }
+
   .toggle-collapse {
     display: block;
     font-size: 2rem;
-    &:hover {
-      cursor: pointer;
-    }
-
-    &.open {
-      content: "X";
+    .toggle-click {
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 
@@ -44,6 +42,13 @@
     @include easeOut();
     &.open {
       transform: translateX(0);
+    }
+    .side-nav {
+      padding-top: 1rem;
+    }
+    .nav-img {
+      padding-top: 2rem;
+      width: 8rem;
     }
   }
 

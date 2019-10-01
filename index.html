@@ -25,7 +25,7 @@
   <body id="bg-img">
     <div class="container">
       <div class="toggle-collapse">
-        ☰
+        <span class="toggle-click" data-text-swap="X">☰</span>
       </div>
       <div class="overlay"></div>
       <nav class="navbar">
@@ -70,16 +70,31 @@
     <script>
       (function() {
         var hamburger = {
-          navToggle: document.querySelector(".toggle-collapse"),
+          navToggle: document.querySelector(".toggle-click"),
           nav: document.querySelector(".navbar"),
 
           doToggle: function(e) {
             e.preventDefault();
-            this.navToggle.classList.toggle("open");
+
             this.nav.classList.toggle("open");
+            if (
+              this.navToggle.getAttribute("data-text-swap") ==
+              this.navToggle.innerHTML
+            ) {
+              this.navToggle.innerHTML = this.navToggle.getAttribute(
+                "data-text-original"
+              );
+            } else {
+              this.navToggle.setAttribute(
+                "data-text-original",
+                this.navToggle.innerHTML
+              );
+              this.navToggle.innerHTML = this.navToggle.getAttribute(
+                "data-text-swap"
+              );
+            }
           }
         };
-
         hamburger.navToggle.addEventListener("click", function(e) {
           hamburger.doToggle(e);
         });
