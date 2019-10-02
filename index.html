@@ -23,18 +23,19 @@
     />
   </head>
   <body id="bg-img">
-    <div class="container">
-      <div class="toggle-collapse">
+    <div class="container" id="nav">
+      <!--<div class="toggle-collapse">
         <span class="toggle-click" data-text-swap="X">☰</span>
-      </div>
-      <div class="overlay"></div>
-      <nav class="navbar">
+      </div>-->
+      <nav class="navbar" id="header">
         <img src="dist/img/boy.png" class="nav-img" />
-        <ul class="side-nav">
+        <ul class="side-nav" id="navigation">
           <li class="nav-item">
-            <a href="#home" class="nav-link active">Home</a>
+            <a href="#home" id="link-home" class="nav-link active">Home</a>
           </li>
-          <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+          <li class="nav-item">
+            <a href="#about" id="link-about" class="nav-link">About</a>
+          </li>
           <li class="nav-item">
             <a href="#projects" class="nav-link">Projects</a>
           </li>
@@ -54,7 +55,7 @@
         </ul>
       </nav>
     </div>
-    <main id="home">
+    <div class="home" id="home">
       <h1 class="lg-heading">Mikołaj <span class="text-sec">Jonczyk</span></h1>
       <h2 class="sm-heading">
         Web and desktop <span class="text-sec">developer</span>, security
@@ -66,7 +67,10 @@
         <a href="#f"> <i class="fab fa-facebook fa-2x"></i> </a>
         <a href="#I"> <i class="fab fa-instagram fa-2x"></i> </a>
       </div>
-    </main>
+    </div>
+    <div class="home" id="about">
+      <h1 class="lg-heading">Najs <span class="text-sec">chyba</span></h1>
+    </div>
     <script>
       (function() {
         var hamburger = {

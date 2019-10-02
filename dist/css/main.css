@@ -138,25 +138,34 @@ header {
   color: #00e6ac;
 }
 
-main {
+.home {
+  position: absolute;
+  margin-left: -102%;
   padding: 4rem;
   padding-left: 25rem;
   height: 100%;
   min-height: calc(100vh - 60px);
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  z-index: 2;
 }
 
-main .icons {
+.home .icons {
   margin-top: 1rem;
 }
 
-main .icons a {
+.home .icons a {
   padding: 0.4rem;
 }
 
-main .icons a:hover {
+.home .icons a:hover {
   color: #00e6ac;
   -webkit-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
+}
+
+.home:target {
+  margin-left: 0%;
 }
 
 .toggle-collapse {
@@ -171,8 +180,13 @@ main .icons a:hover {
   z-index: 1;
 }
 
+#home:target ~ #nav #header #navigation #link-home,
+#about:target ~ #nav #header #navigation #link-about {
+  background: #000;
+}
+
 @media screen and (max-width: 768px) {
-  main {
+  .home {
     -webkit-transform: translateX(-20rem);
             transform: translateX(-20rem);
     -webkit-transition: all 0.5s ease-out;
@@ -180,11 +194,11 @@ main .icons a:hover {
     padding: 0;
     padding-left: 22rem;
   }
-  main .icons {
+  .home .icons {
     white-space: nowrap;
     display: inline;
   }
-  main .icons a {
+  .home .icons a {
     padding: 0.1rem;
     display: float;
   }
