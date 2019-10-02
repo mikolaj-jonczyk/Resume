@@ -52,11 +52,15 @@ header {
   color: $secondary-color;
 }
 
-main {
+.home {
+  position: absolute;
+  margin-left: -102%;
   padding: 4rem;
   padding-left: 25rem;
   height: 100%;
   min-height: calc(100vh - 60px); //footer stays in bottom
+  @include easeOut();
+  z-index: 2;
 
   .icons {
     margin-top: 1rem;
@@ -71,6 +75,10 @@ main {
   }
 }
 
+.home:target {
+  margin-left: 0%;
+}
+
 .toggle-collapse {
   width: 100%;
   padding: 0.5rem 0.8rem;
@@ -80,6 +88,11 @@ main {
   font-size: 1.2rem;
   display: none;
   z-index: 1;
+}
+
+#home:target ~ #nav #header #navigation #link-home,
+#about:target ~ #nav #header #navigation #link-about {
+  background: #000;
 }
 
 @import "mobile";
