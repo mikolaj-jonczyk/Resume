@@ -4,6 +4,7 @@
     @include easeOut();
     padding: 0;
     padding-left: 22rem;
+    padding-top: 4rem;
 
     .icons {
       white-space: nowrap;
@@ -28,8 +29,10 @@
   }
 
   .toggle-collapse {
+    position: absolute;
     display: block;
-    font-size: 2rem;
+    font-size: 1.6rem;
+    z-index: 10;
     .toggle-click {
       &:hover {
         cursor: pointer;
@@ -38,6 +41,7 @@
   }
 
   .navbar {
+    padding-top: 3rem;
     transform: translateX(-18rem);
     @include easeOut();
     &.open {
@@ -50,23 +54,9 @@
       padding-top: 2rem;
       width: 8rem;
     }
-  }
-
-  .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
-    opacity: 0;
-    z-index: -1;
-    transition: opacity 100ms linear;
-  }
-
-  .overlay.open {
-    z-index: 1;
-    opacity: 1;
+    .close {
+      opacity: 1;
+    }
   }
 }
 
