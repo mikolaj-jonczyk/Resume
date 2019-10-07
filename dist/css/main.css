@@ -59,6 +59,10 @@
   transition: all 0.5s ease-out;
 }
 
+.navbar .close {
+  opacity: 0;
+}
+
 .navbar .nav-img {
   text-align: center;
   padding: 0;
@@ -169,7 +173,7 @@ header {
 .panel {
   -webkit-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
-  margin-left: -50%;
+  margin-left: -100%;
   z-index: 2;
   background-color: blue;
 }
@@ -203,6 +207,7 @@ header {
     transition: all 0.5s ease-out;
     padding: 0;
     padding-left: 22rem;
+    padding-top: 4rem;
   }
   .home .icons, .panel .icons {
     white-space: nowrap;
@@ -224,13 +229,16 @@ header {
     font-size: 1.5rem;
   }
   .toggle-collapse {
+    position: absolute;
     display: block;
-    font-size: 2rem;
+    font-size: 1.6rem;
+    z-index: 10;
   }
   .toggle-collapse .toggle-click:hover {
     cursor: pointer;
   }
   .navbar {
+    padding-top: 3rem;
     -webkit-transform: translateX(-18rem);
             transform: translateX(-18rem);
     -webkit-transition: all 0.5s ease-out;
@@ -247,20 +255,7 @@ header {
     padding-top: 2rem;
     width: 8rem;
   }
-  .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
-    opacity: 0;
-    z-index: -1;
-    -webkit-transition: opacity 100ms linear;
-    transition: opacity 100ms linear;
-  }
-  .overlay.open {
-    z-index: 1;
+  .navbar .close {
     opacity: 1;
   }
 }

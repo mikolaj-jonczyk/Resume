@@ -23,53 +23,59 @@
     />
   </head>
   <body id="bg-img">
-    <aside class="toggle-collapse" id="toggle">
+    <div class="toggle-collapse">
       <span class="toggle-click" data-text-swap="X">☰</span>
-    </aside>
-    <div class="container" id="nav">
-      <nav class="navbar" id="header">
-        <img src="dist/img/boy.png" class="nav-img" />
-        <ul class="side-nav" id="navigation">
-          <li class="nav-item">
-            <a href="#home" id="link-home" class="nav-link active">Home</a>
-          </li>
-          <li class="nav-item">
-            <a href="#about" id="link-about" class="nav-link">About</a>
-          </li>
-          <li class="nav-item">
-            <a href="#projects" class="nav-link">Projects</a>
-          </li>
-          <li class="nav-item">
-            <a href="#contact" class="nav-link">Contact</a>
-          </li>
-          <li class="nav-item">
-            <div class="nav-icons">
-              <a href="#g" class="nav-i"
-                ><i class="fab fa-github-square"></i
-              ></a>
-              <a href="#!" class="nav-i"> <i class="fab fa-linkedin"></i> </a>
-              <a href="#!" class="nav-i"> <i class="fab fa-facebook"></i> </a>
-              <a href="#!" class="nav-i"> <i class="fab fa-instagram"></i> </a>
-            </div>
-          </li>
-        </ul>
-      </nav>
     </div>
-    <div class="home" id="home">
-      <h1 class="lg-heading">Mikołaj <span class="text-sec">Jonczyk</span></h1>
-      <h2 class="sm-heading">
-        Web and desktop <span class="text-sec">developer</span>, security
-        enthusiast
-      </h2>
-      <div class="icons">
-        <a href="#f"> <i class="fab fa-github-square fa-2x"></i> </a>
-        <a href="#l"> <i class="fab fa-linkedin fa-2x"></i> </a>
-        <a href="#f"> <i class="fab fa-facebook fa-2x"></i> </a>
-        <a href="#I"> <i class="fab fa-instagram fa-2x"></i> </a>
+    <div>
+      <div class="container" id="nav">
+        <nav class="navbar" id="header">
+          <img src="dist/img/boy.png" class="nav-img" />
+          <ul class="side-nav" id="navigation">
+            <li class="nav-item">
+              <a href="#home" id="link-home" class="nav-link active">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="#about" id="link-about" class="nav-link">About</a>
+            </li>
+            <li class="nav-item">
+              <a href="#projects" class="nav-link">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a href="#contact" class="nav-link">Contact</a>
+            </li>
+            <li class="nav-item">
+              <div class="nav-icons">
+                <a href="#g" class="nav-i"
+                  ><i class="fab fa-github-square"></i
+                ></a>
+                <a href="#!" class="nav-i"> <i class="fab fa-linkedin"></i> </a>
+                <a href="#!" class="nav-i"> <i class="fab fa-facebook"></i> </a>
+                <a href="#!" class="nav-i">
+                  <i class="fab fa-instagram"></i>
+                </a>
+              </div>
+            </li>
+          </ul>
+        </nav>
       </div>
-    </div>
-    <div class="panel" id="about">
-      <h1 class="lg-heading">Najs <span class="text-sec">chyba</span></h1>
+      <div class="home" id="home">
+        <h1 class="lg-heading">
+          Mikołaj <span class="text-sec">Jonczyk</span>
+        </h1>
+        <h2 class="sm-heading">
+          Web and desktop <span class="text-sec">developer</span>, security
+          enthusiast
+        </h2>
+        <div class="icons">
+          <a href="#f"> <i class="fab fa-github-square fa-2x"></i> </a>
+          <a href="#l"> <i class="fab fa-linkedin fa-2x"></i> </a>
+          <a href="#f"> <i class="fab fa-facebook fa-2x"></i> </a>
+          <a href="#I"> <i class="fab fa-instagram fa-2x"></i> </a>
+        </div>
+      </div>
+      <div class="panel" id="about">
+        <h1 class="lg-heading">Najs <span class="text-sec">chyba</span></h1>
+      </div>
     </div>
 
     <script>
@@ -79,8 +85,6 @@
           nav: document.querySelector(".navbar"),
 
           doToggle: function(e) {
-            e.preventDefault();
-
             this.nav.classList.toggle("open");
             if (
               this.navToggle.getAttribute("data-text-swap") ==
