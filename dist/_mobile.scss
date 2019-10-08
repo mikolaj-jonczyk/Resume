@@ -1,9 +1,11 @@
 @include mediaMd {
-  .home {
-    transform: translateX(-20rem);
+  .home,
+  .panel {
+    transform: translateX(0rem);
     @include easeOut();
     padding: 0;
-    padding-left: 22rem;
+    width: 100%;
+    padding-left: 1rem;
     padding-top: 4rem;
 
     .icons {

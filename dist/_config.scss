@@ -25,6 +25,24 @@ $third-color: #fff;
   }
 }
 
+@mixin about {
+  &#about {
+    background: url(../img/tring.png);
+    background-attachment: fixed;
+    background-size: cover;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 5;
+    }
+  }
+}
+
 @mixin mediaSm {
   @media screen and (max-width: 500px) {
     @content;
