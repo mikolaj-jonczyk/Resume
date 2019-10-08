@@ -58,6 +58,7 @@ header {
   padding: 4rem;
   padding-left: 25rem;
   height: 100%;
+  width: 100%;
   min-height: calc(100vh - 60px); //footer stays in bottom
   @include easeOut();
 
@@ -75,11 +76,12 @@ header {
 }
 
 .panel {
+  @include about();
   @extend .home;
   @include easeOut();
   margin-left: -100%;
   z-index: 2;
-  background-color: blue;
+
   &:target {
     margin-left: 0%;
   }
@@ -98,7 +100,7 @@ header {
 
 #home:target ~ #nav #header #navigation #link-home,
 #about:target ~ #nav #header #navigation #link-about {
-  background: #000;
+  font-size: 1rem;
 }
 
 @import "mobile";
