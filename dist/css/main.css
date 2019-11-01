@@ -146,8 +146,10 @@ header {
   color: #00e6ac;
 }
 
-.home, .panel,
-.panel {
+.home, .project, .about,
+.panel,
+.project,
+.about {
   position: absolute;
   padding: 2rem;
   padding-left: 25rem;
@@ -158,24 +160,60 @@ header {
   transition: all 0.5s ease-out;
 }
 
-.home .icons, .panel .icons,
-.panel .icons {
+.home .icons, .project .icons, .about .icons,
+.panel .icons,
+.project .icons,
+.about .icons {
   margin-top: 1rem;
 }
 
-.home .icons a, .panel .icons a,
-.panel .icons a {
+.home .icons a, .project .icons a, .about .icons a,
+.panel .icons a,
+.project .icons a,
+.about .icons a {
   padding: 0.4rem;
 }
 
-.home .icons a:hover, .panel .icons a:hover,
-.panel .icons a:hover {
+.home .icons a:hover, .project .icons a:hover, .about .icons a:hover,
+.panel .icons a:hover,
+.project .icons a:hover,
+.about .icons a:hover {
   color: #00e6ac;
   -webkit-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
 }
 
-.panel {
+.project {
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  text-align: center;
+  padding-left: 15rem;
+  background: #666666;
+  margin-left: -100%;
+  z-index: 2;
+}
+
+.project:target {
+  margin-left: 0%;
+}
+
+.project .project-grid {
+  padding-left: 30rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 20rem 20rem;
+      grid-template-columns: 20rem 20rem;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+}
+
+.project .project-grid .project-tile {
+  padding-top: 4rem;
+  padding-left: 10rem;
+  height: 10rem;
+}
+
+.about {
   -webkit-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
   background: #666666;
@@ -190,15 +228,15 @@ header {
       grid-template-areas: "header img" "more more ";
 }
 
-.panel:target {
+.about:target {
   margin-left: 0%;
 }
 
-.panel .about-header {
+.about .about-header {
   padding-top: 5rem;
 }
 
-.panel .about-img {
+.about .about-img {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
   grid-area: img;
@@ -220,13 +258,16 @@ header {
 }
 
 #home:target ~ #nav #header #navigation #link-home,
-#about:target ~ #nav #header #navigation #link-about {
+#about:target ~ #nav #header #navigation #link-about,
+#project:target ~ #nav #header #navigation #link-project {
   font-size: 1rem;
 }
 
 @media screen and (max-width: 768px) {
-  .home, .panel,
-  .panel {
+  .home, .project, .about,
+  .panel,
+  .project,
+  .about {
     -webkit-transform: translateX(0rem);
             transform: translateX(0rem);
     -webkit-transition: all 0.5s ease-out;
@@ -236,13 +277,17 @@ header {
     padding-left: 1rem;
     padding-top: 4rem;
   }
-  .home .icons, .panel .icons,
-  .panel .icons {
+  .home .icons, .project .icons, .about .icons,
+  .panel .icons,
+  .project .icons,
+  .about .icons {
     white-space: nowrap;
     display: inline;
   }
-  .home .icons a, .panel .icons a,
-  .panel .icons a {
+  .home .icons a, .project .icons a, .about .icons a,
+  .panel .icons a,
+  .project .icons a,
+  .about .icons a {
     padding: 0.1rem;
     display: float;
   }
