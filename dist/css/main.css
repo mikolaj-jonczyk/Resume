@@ -146,55 +146,82 @@ header {
   color: #00e6ac;
 }
 
-.home, .project, .about,
-.panel,
-.project,
-.about {
+.home, .panel, .contact, .project, .about {
   position: absolute;
   padding: 2rem;
   padding-left: 25rem;
   height: 100%;
   width: 100%;
   min-height: calc(100vh - 60px);
-  -webkit-transition: all 0.5s ease-out;
-  transition: all 0.5s ease-out;
 }
 
-.home .icons, .project .icons, .about .icons,
-.panel .icons,
-.project .icons,
-.about .icons {
+.home .icons, .panel .icons, .contact .icons, .project .icons, .about .icons {
   margin-top: 1rem;
 }
 
-.home .icons a, .project .icons a, .about .icons a,
-.panel .icons a,
-.project .icons a,
-.about .icons a {
+.home .icons a, .panel .icons a, .contact .icons a, .project .icons a, .about .icons a {
   padding: 0.4rem;
 }
 
-.home .icons a:hover, .project .icons a:hover, .about .icons a:hover,
-.panel .icons a:hover,
-.project .icons a:hover,
-.about .icons a:hover {
+.home .icons a:hover, .panel .icons a:hover, .contact .icons a:hover, .project .icons a:hover, .about .icons a:hover {
   color: #00e6ac;
   -webkit-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
 }
 
-.project {
-  -webkit-transition: all 0.5s ease-out;
-  transition: all 0.5s ease-out;
+.panel, .contact, .project, .about {
   text-align: center;
   padding-left: 15rem;
   background: #666666;
   margin-left: -100%;
   z-index: 2;
+  border-right: 0.3rem solid #444;
+  -webkit-transition: all 1s ease-out;
+  transition: all 1s ease-out;
 }
 
-.project:target {
+.panel:target, .contact:target, .project:target, .about:target {
   margin-left: 0%;
+}
+
+.contact .contact-header {
+  margin-top: 5rem;
+}
+
+.contact .e-mail {
+  text-decoration: underline;
+  -webkit-text-decoration-color: #00e6ac;
+          text-decoration-color: #00e6ac;
+}
+
+.contact .contact-grid {
+  padding-top: 5rem;
+  margin-left: 20rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 20rem 20rem 20rem;
+      grid-template-columns: 20rem 20rem 20rem;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+      grid-template-areas: "info info info";
+}
+
+.contact .contact-grid .info .info-img {
+  background: white;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: info;
+  width: 10rem;
+  border: 0.5rem solid #444;
+  border-radius: 100%;
+}
+
+.contact .contact-grid .info .info-img:hover {
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .project .project-grid {
@@ -214,11 +241,6 @@ header {
 }
 
 .about {
-  -webkit-transition: all 0.5s ease-out;
-  transition: all 0.5s ease-out;
-  background: #666666;
-  margin-left: -100%;
-  z-index: 2;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 50rem 30rem;
@@ -226,10 +248,6 @@ header {
   -ms-grid-rows: auto;
       grid-template-rows: auto;
       grid-template-areas: "header img" "more more ";
-}
-
-.about:target {
-  margin-left: 0%;
 }
 
 .about .about-header {
@@ -259,15 +277,13 @@ header {
 
 #home:target ~ #nav #header #navigation #link-home,
 #about:target ~ #nav #header #navigation #link-about,
-#project:target ~ #nav #header #navigation #link-project {
+#project:target ~ #nav #header #navigation #link-project,
+#contact:target ~ #nav #header #navigation #link-contact {
   font-size: 1rem;
 }
 
 @media screen and (max-width: 768px) {
-  .home, .project, .about,
-  .panel,
-  .project,
-  .about {
+  .home, .panel, .contact, .project, .about, .panel, .contact, .project, .about {
     -webkit-transform: translateX(0rem);
             transform: translateX(0rem);
     -webkit-transition: all 0.5s ease-out;
@@ -277,15 +293,17 @@ header {
     padding-left: 1rem;
     padding-top: 4rem;
   }
-  .home .icons, .project .icons, .about .icons,
+  .home .icons, .panel .icons, .contact .icons, .project .icons, .about .icons,
   .panel .icons,
+  .contact .icons,
   .project .icons,
   .about .icons {
     white-space: nowrap;
     display: inline;
   }
-  .home .icons a, .project .icons a, .about .icons a,
+  .home .icons a, .panel .icons a, .contact .icons a, .project .icons a, .about .icons a,
   .panel .icons a,
+  .contact .icons a,
   .project .icons a,
   .about .icons a {
     padding: 0.1rem;
