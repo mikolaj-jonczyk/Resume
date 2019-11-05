@@ -58,15 +58,13 @@ header {
   color: $secondary-color;
 }
 
-.home,
-.panel {
+.home {
   position: absolute;
   padding: 2rem;
   padding-left: 25rem;
   height: 100%;
   width: 100%;
   min-height: calc(100vh - 60px); //footer stays in bottom
-  @include easeOut();
 
   .icons {
     margin-top: 1rem;
@@ -81,19 +79,57 @@ header {
   }
 }
 
-.project {
+.panel {
   @extend .home;
-  @extend .panel;
-  @include easeOut();
   text-align: center;
   padding-left: 15rem;
   background: $fourth-color;
   margin-left: -100%;
   z-index: 2;
-
+  border-right: 0.3rem solid $primary-color;
+  @include slowEaseOut();
   &:target {
     margin-left: 0%;
   }
+}
+
+.contact {
+  @extend .panel;
+
+  .contact-header {
+    margin-top: 5rem;
+  }
+  .e-mail {
+    text-decoration: underline;
+    text-decoration-color: $secondary-color;
+  }
+
+  .contact-grid {
+    padding-top: 5rem;
+    margin-left: 20rem;
+    display: grid;
+    grid-template-columns: 20rem 20rem 20rem;
+    grid-template-rows: auto;
+    grid-template-areas: "info info info";
+
+    .info {
+      .info-img {
+        background: white;
+        grid-area: info;
+        width: 10rem;
+        border: 0.5rem solid $primary-color;
+        border-radius: 100%;
+        &:hover {
+          @include fastEaseOut();
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}
+
+.project {
+  @extend .panel;
 
   .project-grid {
     padding-left: 30rem;
@@ -110,22 +146,13 @@ header {
 }
 
 .about {
-  @extend .home;
   @extend .panel;
-  @include easeOut();
-  background: $fourth-color;
-  margin-left: -100%;
-  z-index: 2;
   display: grid;
   grid-template-columns: 50rem 30rem;
   grid-template-rows: auto;
   grid-template-areas:
     "header img"
     "more more ";
-
-  &:target {
-    margin-left: 0%;
-  }
 
   .about-header {
     padding-top: 5rem;
@@ -152,7 +179,8 @@ header {
 
 #home:target ~ #nav #header #navigation #link-home,
 #about:target ~ #nav #header #navigation #link-about,
-#project:target ~ #nav #header #navigation #link-project {
+#project:target ~ #nav #header #navigation #link-project,
+#contact:target ~ #nav #header #navigation #link-contact {
   font-size: 1rem;
 }
 
