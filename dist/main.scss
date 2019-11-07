@@ -36,6 +36,11 @@ h3 {
     background: rgba(lighten($primary-color, 2), 0.5);
   }
 
+  &.lg-description {
+    color: $secondary-color;
+    font-size: 3rem;
+  }
+
   &.sm-description {
     text-align: center;
     padding-top: 2rem;
@@ -147,22 +152,51 @@ header {
 
 .about {
   @extend .panel;
-  display: grid;
-  grid-template-columns: 50rem 30rem;
-  grid-template-rows: auto;
-  grid-template-areas:
-    "header img"
-    "more more ";
 
-  .about-header {
-    padding-top: 5rem;
+  .about-grid {
+    margin-left: 12rem;
+    display: grid;
+    grid-template-columns: 50rem 30rem;
+    grid-template-rows: auto;
+    grid-template-areas: "header img";
+    .about-header {
+      padding-top: 5rem;
+    }
+
+    .about-img {
+      grid-area: img;
+      padding-top: 4rem;
+      padding-left: 10rem;
+      height: 25rem;
+    }
   }
 
-  .about-img {
-    grid-area: img;
-    padding-top: 4rem;
-    padding-left: 10rem;
-    height: 25rem;
+  .more {
+    margin-top: 3rem;
+    .lighten {
+      margin: 2rem 0 2rem 6rem;
+      padding: 1rem 1rem;
+      background: rgba(lighten($primary-color, 2), 0.5);
+    }
+    .technologies {
+      display: flex;
+      justify-content: center;
+      .spec {
+        padding: 2rem;
+        margin: 1rem 4rem 1rem 4rem;
+        border: 0.5rem solid $primary-color;
+        border-style: dotted;
+        grid-area: spec;
+        color: black;
+        font-size: 2rem;
+        font-weight: bolder;
+        font-style: italic;
+        &:hover {
+          @include fastEaseOut();
+          transform: scale(1.1);
+        }
+      }
+    }
   }
 }
 
